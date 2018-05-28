@@ -2,6 +2,7 @@ const fs = require('fs')
 const express = require('express')
 const hbs = require('hbs')
 const app = express()
+const port = process.env.PORT || 3002
 
 hbs.registerPartials(__dirname+'/views/partials')
 hbs.registerHelper('getYear',()=>{
@@ -40,6 +41,6 @@ app.get('/about',(req,res)=>{
 	})	
 })
 
-app.listen(3002,()=>{
-	console.log("Server Running on 3002")
+app.listen(port,()=>{
+	console.log(`Server Running on ${port}`)
 })
